@@ -1,4 +1,5 @@
 const express = require("express");
+const productRoutes = require("./routes/products");
 
 const app = express();
 
@@ -9,5 +10,7 @@ app.get("/health", (req, res) => {
         status: "ok"
     });
 });
+
+app.use("/api/products", productRoutes);
 
 module.exports = app;
